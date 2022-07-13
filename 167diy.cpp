@@ -8,7 +8,7 @@ vector<int> twoSum(vector<int>& numbers, int& target) {
     vector<int> idx(2);
     for (auto p1=numbers.begin();p1!=numbers.end();p1++)
     {
-        for (auto p2=p1;p2!=numbers.end();p2++)
+        for (auto p2=p1+1;p2!=numbers.end();p2++)
         {
             if ((*p1+*p2)>target)
             {
@@ -22,12 +22,13 @@ vector<int> twoSum(vector<int>& numbers, int& target) {
             }
         }
     }
+    return idx;
 }
 
 int main()
 {
-    vector<int> numbers={2,7,11,15};
-    int target=9;
+    vector<int> numbers={0,0,11,15};
+    int target=0;
     cout<<twoSum(numbers,target)[0]<<","<<twoSum(numbers,target)[1]<<endl;
     return 0;
 }
